@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>blog-nodejs</title>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+  <link rel="stylesheet" href="public/main.css">
+</head>
+<body>
+  <% if (userInfo.userId) { %>
+
+      <% if (userInfo.isAdmin) { %>
+      <h3 class="text-center title"><span>管理员</span>&nbsp;您好</h3>
+      <div class="text-center"><a href="/admin">进入管理</a></div>
+      <% } else { %>
+      <h3 class="text-center title"><span class="text-primary"><%= userInfo.userName %></span>&nbsp;您好</h3>
+      <% } %>
+
+    <h3 class="text-center">欢迎进入博客后台管理系统<a href="javascript:;" class="logout">退出</a></h3>
+  <% } else { %>
+  <div class="login">
+    <h3 class="text-center title">登录博客后台管理系统</h3>
+    <div class="form-group">
+      <label for="login-username">昵称</label>
+      <input type="text" class="form-control" id="login-username" placeholder="请输入昵称">
+    </div>
+    <div class="form-group">
+      <label for="login-password">密码</label>
+      <input type="password" class="form-control" id="login-password" placeholder="请输入密码">
+    </div>
+    <div class="form-group login-info-tip text-danger"></div>
+    <button class="btn btn-primary btn-login">登录</button>
+    <div>还没有账号？<a href="javascript:;" class="go-to-register">立即注册</a></div>
+  </div>
+
+  <div class="register">
+    <h3 class="text-center title">注册博客后台管理系统账号</h3>
+    <div class="form-group">
+      <label for="register-username">昵称</label>
+      <input type="text" class="form-control" id="register-username" placeholder="请输入昵称">
+    </div>
+    <div class="form-group">
+      <label for="register-password">密码</label>
+      <input type="password" class="form-control" id="register-password" placeholder="请输入密码">
+    </div>
+    <div class="form-group">
+      <label for="re-password">确认密码</label>
+      <input type="password" class="form-control" id="re-password" placeholder="请再次输入密码">
+    </div>
+    <div class="form-group register-info-tip text-danger"></div>
+    <button class="btn btn-primary btn-register">注册</button>
+    <div>已有账号，<a href="javascript:;" class="go-to-login">立即登录</a></div>
+  </div>
+  <% } %>
+  <script src="public/main.js"></script>
+</body>
+</html>

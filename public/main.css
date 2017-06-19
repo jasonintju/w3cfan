@@ -1,0 +1,22 @@
+.title {
+  margin-top: 100px;
+}
+
+.login, .register {
+  width: 500px;
+  margin: 0 auto;
+}
+.register {
+  display: none;
+}
+
+.login .btn-login, .register .btn-register {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.logout {
+  margin-left: 10px;
+  font-size: 15px;
+}
