@@ -2,10 +2,6 @@
   margin-top: 100px;
 }
 
-.login, .register {
-  width: 500px;
-  margin: 0 auto;
-}
 .register {
   display: none;
 }
@@ -19,4 +15,26 @@
 .logout {
   margin-left: 10px;
   font-size: 15px;
+}
+
+header {
+  border-top: 3px solid #6f5499;
+}
+header nav {
+  height: 64px;
+  line-height: 64px;
+}
+nav a, main a {
+  color: #6f5499;
+}
+
+nav .on {
+  border-bottom: 2px solid #6f5499;
+}
+.main-nav a:hover {
+  border-bottom: 2px solid #6f5499;
+}
+
+.list-item {
+  border-bottom: 1px solid #6f5499;
 }

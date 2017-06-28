@@ -1,11 +1,13 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var engine = require('ejs-mate');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var User = require('./models/User');
 
 var app = express();
 
+app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 app.set('views', './views');
 // app.set('view cache', false);
@@ -42,8 +44,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/blog', (err) => {
     console.log('连接数据库失败')
   } else {
     console.log('连接数据库成功')
-    app.listen(8000, () => {
-      console.log('App is running on port 8000');
+    app.listen(8088, () => {
+      console.log('App is running on port 8088');
     });
   }
 });

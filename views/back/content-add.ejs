@@ -1,0 +1,35 @@
+<% layout('back/layout') -%>
+
+<ol class="breadcrumb">
+  <li><a href="/admin">管理首页</a></li>
+  <li><a href="/admin/content">内容列表</a></li>
+  <li class="active">添加内容</li>
+</ol>
+
+<h3>添加内容</h3>
+
+<form method="post" action="/admin/content/add" target="link-iframe">
+  <div class="form-group">
+  <label for="category">分类：</label>
+  <select name="category" id="category" class="form-control">
+    <% categories.forEach((category) => { %>
+    <option value="<%= category.id %>"><%= category.name %></option>
+    <% }) %>
+  </select>
+  </div>
+  <div class="form-group">
+    <label for="title">标题：</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="请输入标题">
+  </div>
+  <div class="form-group">
+    <label for="summary">简介：</label>
+    <textarea class="form-control" id="summary" name="summary" placeholder="请输入简介" rows="5"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="content">内容：</label>
+    <textarea class="form-control" id="content" name="content" placeholder="请输入内容" rows="10"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">添加</button>
+</form>
+
+<iframe name="link-iframe" style="display: none;"></iframe>

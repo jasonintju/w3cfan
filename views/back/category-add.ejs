@@ -1,0 +1,19 @@
+<% layout('back/layout') -%>
+
+<ol class="breadcrumb">
+  <li><a href="/admin">管理首页</a></li>
+  <li><a href="/admin/category">分类首页</a></li>
+  <li class="active">添加分类</li>
+</ol>
+
+<h3>添加分类</h3>
+
+<form method="post" action="/admin/category/add" target="link-iframe">
+  <div class="form-group">
+    <label for="cate-name">分类名称：</label>
+    <input type="text" class="form-control" id="cate-name" name="name" placeholder="请输入分类名称">
+  </div>
+  <button type="submit" class="btn btn-primary">添加</button>
+</form>
+
+<iframe name="link-iframe" style="display: none;"></iframe>
