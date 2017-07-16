@@ -1,4 +1,5 @@
 var express = require('express');
+var path = require('path');
 var mongoose = require('mongoose');
 var engine = require('ejs-mate');
 var bodyParser = require('body-parser');
@@ -37,6 +38,9 @@ app.use((req, res, next) => {
 app.use('/', require('./routers/main'));
 app.use('/api', require('./routers/api'));
 app.use('/admin', require('./routers/admin'));
+app.use('/sub/articles', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'sub-catalog', 'better-learning.html'));
+});
 
 
 mongoose.connect('mongodb://127.0.0.1:27017/blog', (err) => {
